@@ -1,0 +1,47 @@
+
+import sqlite3
+from pathlib import Path
+
+folder = Path(__file__).parent
+data_folder = folder / "data"
+data_folder.mkdir(exist_ok=True)
+
+db_path = data_folder / "sales.db"
+
+with sqlite3.connect(db_path) as connection:
+    connection.execute("""
+        CREATE TABLE IF NOT EXISTS sales (
+            sale_id INTEGER PRIMARY KEY,
+            customer_name TEXT,
+            product TEXT,
+            category TEXT,
+            region TEXT,
+            amount REAL,
+            sale_date TEXT,
+            discount REAL
+        )
+    """)
+
+    connection.execute("DELETE FROM sales")
+
+    rows = [
+        (1, "Ananya", "Laptop", "Electronics", "South", 55000, "2026-09-01", 0.10),
+        (2, "Rahul", "Phone", "Electronics", "North", 25000, "2026-09-02", 0.05),
+        (3, "Priya", "Chair", "Furniture", "West", 4500, "2026-09-03", None),
+        (4, "Arjun", "Desk", "Furniture", "South", 8000, "2026-09-04", 0.00),
+        (5, "Meera", "Headphones", "Electronics", "East", 2000, "2026-09-05", 0.15),
+        (6, "Kiran", "Monitor", "Electronics", "South", 12000, "2026-09-06", None),
+        (7, "Divya", "Notebook", "Stationery", "North", 150, "2026-09-07", 0.00),
+        (8, "Vikram", "Pen", "Stationery", "West", 50, "2026-09-08", None),
+        (9, "Sneha", "Tablet", "Electronics", "East", 18000, "2026-09-09", 0.08),
+        (10, "Rohan", "Bookshelf", "Furniture", "South", 6500, "2026-09-10", 0.05),
+    ]
+
+    connection.executemany("""
+        INSERT INTO sales
+        (sale_id, customer_name, product, category, region, amount, sale_date, discount)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    """, rows)
+
+print(f"Database created: {db_path}")
+print(f"Sales records inserted: {len(rows)}")
