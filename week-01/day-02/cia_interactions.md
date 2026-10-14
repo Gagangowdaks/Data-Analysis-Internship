@@ -1,27 +1,42 @@
-﻿# Cynaris W1D2 — CIA Interactions
+﻿# Cynaris W1D2 — CIA Interaction Evidence
 
 ## Interaction 1: LEFT JOIN vs INNER JOIN
 
 **Question asked:**
+
 Explain the difference between LEFT JOIN and INNER JOIN with a business reporting example.
 
-**Key learnings:**
-- INNER JOIN returns only rows with matching records in both tables.
-- LEFT JOIN returns every row from the left table, even if there is no match in the right table.
-- Example: INNER JOIN can report customers who placed orders.
-- Example: LEFT JOIN can report all customers, including customers who have never ordered.
-- LEFT JOIN is useful when a report must include records with no matching activity.
+**Key learnings from the actual CIA response:**
+
+- `INNER JOIN` returns only records that match in both tables.
+- `LEFT JOIN` keeps every record from the left table and returns NULL for unmatched right-side records.
+- Example: an INNER JOIN can show customers who purchased, while a LEFT JOIN can include customers with zero purchases.
+- `COUNT(right_table.id)` does not count NULL values, making it useful for customer-wise sales reports.
+- Choose the join based on the business requirement and verify results.
+- Join performance depends on the data, query plan, indexes, and database optimizer.
 
 ## Interaction 2: JOIN Order and Query Performance
 
-**Research question:**
+**Research question asked:**
+
 How does JOIN order affect SQL query performance?
 
-**Key learnings:**
-- JOIN performance depends on table sizes, indexes, join conditions, and the database query optimizer.
-- Joining on suitable indexed columns can improve performance.
-- Filter unnecessary rows early when appropriate.
-- Avoid joining tables on incorrect keys because this can create unexpected duplicate rows.
-- Use EXPLAIN or the database query plan to understand how a query runs.
+**Key learnings from the actual CIA response:**
 
-**Status:** Notes prepared. Confirm that the questions were submitted to CIA and review its responses before marking the interactions complete.
+- Large intermediate result sets can increase processing time and memory usage.
+- Filtering data early can reduce the number of rows processed by later joins.
+- Suitable indexes on join and filter columns can improve performance.
+- Database optimizers choose join orders and algorithms using statistics and estimates.
+- Use `EXPLAIN` or `EXPLAIN ANALYZE`, where supported, to inspect query execution.
+- Keep database statistics updated and compare query plans before claiming performance improvements.
+- A CTE or subquery can make filtering logic clearer, but does not guarantee materialization or a faster query.
+
+## Evidence status
+
+**Status:** Both CIA responses received and reviewed.
+
+**Evidence source:** Actual CIA responses pasted into the ChatGPT conversation on 14 October 2026.
+
+**Related practical work:** W1D2 SQL Joins — 7 of 7 queries passed in the local test.
+
+**Important note:** Performance improvements mentioned in CIA examples are illustrative unless independently measured in our project.
