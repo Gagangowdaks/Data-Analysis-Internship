@@ -1,0 +1,8 @@
+PASS: Dataset is not empty
+PASS: No duplicate rows
+PASS: Required fields have no missing values
+PASS: Column names are unique
+PASS: Amounts are non-negative
+PASS: Discount missing values documented — 3 missing discounts; review before analysis
+
+Summary: 6/6 checks passed

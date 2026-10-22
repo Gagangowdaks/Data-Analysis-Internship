@@ -1,0 +1,63 @@
+﻿dataContractSpecification: 0.9.3
+id: sales-data-v1
+info:
+  title: Sales Data Contract
+  owner: data-engineering
+  consumer: analytics-team
+  description: Contract for the internship sales analysis dataset
+  freshness_sla: "99.5% of records available within 2 hours of source close"
+
+models:
+  sales:
+    type: table
+    fields:
+      sale_id:
+        type: integer
+        required: true
+        unique: true
+        classification: internal
+      product:
+        type: string
+        required: true
+        classification: internal
+      category:
+        type: string
+        required: true
+        classification: internal
+      region:
+        type: string
+        required: true
+        classification: internal
+      amount:
+        type: number
+        required: true
+        minimum: 0
+        classification: confidential
+      sale_date:
+        type: date
+        required: true
+        classification: internal
+      discount:
+        type: number
+        required: false
+        minimum: 0
+        maximum: 1
+        classification: internal
+
+classification_policy:
+  public: Approved for public release
+  internal: Business use only
+  confidential: Restricted business data; least-privilege access
+  pii: Personal data requiring approved purpose, access controls, and retention limits
+
+pii_assessment:
+  direct_identifiers_present: false
+  note: Reassess if customer names, emails, phone numbers, PAN, or other personal identifiers are added.
+
+quality_dimensions:
+  - completeness
+  - accuracy
+  - consistency
+  - timeliness
+  - uniqueness
+  - validity

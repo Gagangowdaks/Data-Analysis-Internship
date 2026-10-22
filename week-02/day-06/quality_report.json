@@ -1,0 +1,50 @@
+{
+  "source": "week-01\\day-05\\sales_data.csv",
+  "row_count": 10,
+  "columns": [
+    "sale_id",
+    "customer_name",
+    "product",
+    "category",
+    "region",
+    "amount",
+    "sale_date",
+    "discount"
+  ],
+  "dimensions": {
+    "completeness": {
+      "passed": true,
+      "missing_values_by_column": {
+        "sale_id": 0,
+        "customer_name": 0,
+        "product": 0,
+        "category": 0,
+        "region": 0,
+        "amount": 0,
+        "sale_date": 0,
+        "discount": 3
+      }
+    },
+    "accuracy": {
+      "passed": true,
+      "negative_amount_rows": 0
+    },
+    "consistency": {
+      "passed": true
+    },
+    "timeliness": {
+      "passed": true,
+      "earliest_date": "2026-09-01 00:00:00",
+      "latest_date": "2026-09-10 00:00:00",
+      "note": "Ingestion timestamps are needed to test a 2-hour freshness SLA."
+    },
+    "uniqueness": {
+      "passed": true,
+      "duplicate_sale_ids": 0
+    },
+    "validity": {
+      "passed": true
+    }
+  },
+  "overall_pass": true
+}
