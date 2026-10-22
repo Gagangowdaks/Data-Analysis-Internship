@@ -1,0 +1,11 @@
+sale_id,customer_name,product,category,region,amount,sale_date,discount
+1,Ananya,Laptop,Electronics,South,55000.0,2026-09-01,0.1
+2,Rahul,Phone,Electronics,North,25000.0,2026-09-02,0.05
+3,Priya,Chair,Furniture,West,4500.0,2026-09-03,0.0
+4,Arjun,Desk,Furniture,South,8000.0,2026-09-04,0.0
+5,Meera,Headphones,Electronics,East,2000.0,2026-09-05,0.15
+6,Kiran,Monitor,Electronics,South,12000.0,2026-09-06,0.0
+7,Divya,Notebook,Stationery,North,150.0,2026-09-07,0.0
+8,Vikram,Pen,Stationery,West,50.0,2026-09-08,0.0
+9,Sneha,Tablet,Electronics,East,18000.0,2026-09-09,0.08
+10,Rohan,Bookshelf,Furniture,South,6500.0,2026-09-10,0.05
