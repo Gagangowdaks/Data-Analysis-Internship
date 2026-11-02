@@ -1,0 +1,9 @@
+Q1: What are total sales?
+Manual Pandas answer: 2297200.8603000003
+
+Q2: Which category has the highest sales?
+Manual Pandas answer: Technology
+
+Q3: What is the average profit?
+Manual Pandas answer: 28.65689630778467
+
