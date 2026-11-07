@@ -1,0 +1,22 @@
+
+W5D4 - Polars High-Performance Operations
+
+Polars version: 2.1.0
+Dataset rows: 9994
+Dataset columns: 21
+
+Operations completed:
+1. Total sales and profit
+2. Sales grouped by category
+3. Profit grouped by region
+4. Top 5 products by sales
+5. Discount classification and aggregation
+
+Features used:
+- LazyFrame and scan_csv
+- Expressions and filtering logic
+- Grouping and aggregation
+- Sorting and top-N
+- Query optimization plan
+
+Total execution time for five queries: 0.230548 seconds

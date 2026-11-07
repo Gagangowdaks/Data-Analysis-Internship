@@ -1,0 +1,10 @@
+SORT BY [col("Discount Level")]
+  AGGREGATE[maintain_order: false]
+    [len().alias("Order Count"), col("Sales").mean().alias("Average Sales"), col("Profit").mean().alias("Average Profit")] BY [col("Discount Level")]
+    FROM
+    simple π 3/3 ["Discount Level", "Sales", ... 1 other column]
+       WITH_COLUMNS:
+       [when(col("Discount") >= 0.2).then("High").otherwise("Low").alias("Discount Level")] 
+        Csv SCAN [C:/Users/Lenovo/Documents/Data-Analysis-Internship/week-05/day-04/data/superstore_utf8.csv]
+        PROJECT 3/21 COLUMNS
+        ESTIMATED ROWS: 10595
