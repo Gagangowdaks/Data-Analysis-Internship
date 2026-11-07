@@ -1,0 +1,23 @@
+﻿W5D5 DATA QUALITY VALIDATION
+
+Dataset: Indian Retail Sales
+Rows: 100,000
+Columns: 25
+Missing values: 0
+Duplicate rows: 0
+Unique Order IDs: 100,000
+Unique Customer IDs: 100,000
+Negative sales: 0
+Negative profit: 0
+
+DATE CONSISTENCY:
+Sales Date matches Order Date: 63 records
+Year matches Sales Date: 20,112 records
+Year matches Order Date: 19,977 records
+Year matches both dates: 4,010 records
+
+LIMITATIONS:
+Date columns contain inconsistencies. Monthly and yearly trends may be unreliable.
+All recorded profits are positive.
+Every Customer ID is unique.
+Original source data has been preserved unchanged.

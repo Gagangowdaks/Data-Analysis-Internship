@@ -1,0 +1,6 @@
+Highest sales region: East (Rs. 635,322,296.90)
+Highest profit region: East (Rs. 95,147,250.29)
+Highest sales category: Sessional Fruits & Vegetables (Rs. 419,942,694.68)
+Highest profit category: Household Items (Rs. 62,871,293.87)
+Total sales: Rs. 2,508,441,014.18
+Total profit: Rs. 375,530,511.43
