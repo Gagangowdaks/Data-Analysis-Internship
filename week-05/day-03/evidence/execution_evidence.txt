@@ -1,0 +1,19 @@
+W5D3 Benchmark Execution Evidence
+
+Dataset: superstore_100k.csv
+Rows: 100,000
+Columns: 21
+
+Benchmark:
+Pandas total time: 0.458565 seconds
+DuckDB total time: 0.350159 seconds
+Polars total time: 0.072720 seconds
+
+Validation:
+PASS - Dataset contains 100,000 rows.
+PASS - Pandas, DuckDB and Polars totals match.
+
+Total Sales: 22988869.29
+Total Profit: 2863387.84
+
+Note: Dataset rows were created by repeating the original Sample Superstore records.
