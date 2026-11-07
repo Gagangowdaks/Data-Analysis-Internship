@@ -37,3 +37,6 @@ python week-05/day-05/scripts/validate_project.py
 
 ## AI Usage
 ChatGPT helped interpret results and develop recommendations. Python and Pandas performed the calculations. No external LLM API was connected.
+
+## Validation
+The project validation script passed all 10 checks.
