@@ -11,3 +11,8 @@
 - Apache Superset
 - Docker
 - PostgreSQL
+## Dashboard Summary
+- Dashboard name: Sales Performance Dashboard
+- Charts: Bar, Line, Pie, Metric, Table
+- Data source: PostgreSQL salesdb
+- Database verification: PASS (10 rows)
